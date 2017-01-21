@@ -1,0 +1,162 @@
+<h2>Assessment Detail</h2>
+
+
+<div *ngIf="assessment">
+    <md-card>
+        <md-card-title>
+            <h3>{{assessment.name}} --- {{assessment.assessmentType}}</h3>
+            <h5>Overall Score</h5>
+            <h5>{{assessment.overallMaturityScore}}</h5>
+        </md-card-title>
+        <md-card-content>
+            <div class="container">
+                <div>
+                    <table>
+                        <tr>
+                            <th>Maturity Level</th>
+                            <th>Description</th>
+                            <th>Score</th>
+                        </tr>
+                        <tr>
+                            <td>Level One</td>
+                            <td>Policies Complete</td>
+                            <td>{{assessment.levelOneScore}}</td>
+                        </tr>
+                        <tr>
+                            <td>Level Two</td>
+                            <td>Controls 1-5 Implemented</td>
+                            <td>{{assessment.levelTwoScore}}</td>
+                        </tr>
+                        <tr>
+                            <td>Level Three</td>
+                            <td>All Controls Implemented</td>
+                            <td>{{assessment.levelThreeScore}}</td>
+                        </tr>
+                        <tr>
+                            <td>Level Four</td>
+                            <td>All Controls Automated</td>
+                            <td>{{assessment.levelFourScore}}</td>
+                        </tr>
+                        <tr>
+                            <td>Level Five</td>
+                            <td>All Controls Reported</td>
+                            <td>{{assessment.levelFiveScore}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div>
+                    <p>Created Date</p>
+                    <p>{{assessment.createTimeStamp}}</p>
+                    <p>Modifed Date</p>
+                    <p>{{assessment.updateTimeStamp}}</p>
+                    <p>Last Snapshot Date</p>
+                    <p>{{assessment.lastSnapshotData}}</p>
+                </div>
+            </div>
+        </md-card-content>
+        <md-card-actions>
+            <button md-raised-button color="primary" (click)="saveAssessmentSnapshot(assessment.id)">Create Snapshot</button>
+        </md-card-actions>
+    </md-card>
+</div>
+
+
+<!--<div *ngIf="templateQuestions">
+        <md-card *ngFor="let question of templateQuestions">
+
+            <md-card-content>
+                <p>Question:</p>
+                <p>{{question.detail}}</p>
+
+            </md-card-content>
+        </md-card>
+    </div>-->
+
+<div *ngIf="assessment">
+    <div *ngIf="assessment.assessmentAnswers">
+        <md-card>
+            <md-card-content>
+                <table class="assessmentresult">
+                    <tr>
+                        <th>Control Id</th>
+                        <th>Question</th>
+                        <th>Policy Defined</th>
+                        <th>Control Implemented</th>
+                        <th>Control Automated</th>
+                        <th>Control Reporting</th>
+                        <th>Comments</th>
+                        <th></th>
+                    </tr>
+                    <tr *ngFor="let assessmentAnswer of assessment.assessmentAnswers">
+                        <td>{{assessmentAnswer.controlId}}</td>
+                        <td>{{assessmentAnswer.questionText}}</td>
+                        <td>{{assessmentAnswer.policyDefined}}</td>
+                        <td>{{assessmentAnswer.controlImplemented}}</td>
+                        <td>{{assessmentAnswer.controlAutomated}}</td>
+                        <td>{{assessmentAnswer.controlReporting}}</td>
+                        <td>{{assessmentAnswer.comments}}</td>
+                        <td><button md-raised-button color="primary" (click)="editAssessmentAnswer(assessmentAnswer.id)">Edit</button>
+                    </tr>
+
+                </table>
+            </md-card-content>
+
+        </md-card>
+
+    </div>
+</div>
+
+
+
+
+
+<!--
+<div *ngIf="assessment">
+    <div *ngIf="assessment.assessmentAnswers">
+        <md-card *ngFor="let assessmentAnswer of assessment.assessmentAnswers">
+            <md-card-content>
+                <table>
+                    <tr>
+                        <th>Control</th>
+                        <th>Status</th>
+                        <th>Color</th>
+                    </tr>
+                    <tr>
+                        <td>Policy Defined</td>
+                        <td>{{assessmentAnswer.policyDefined}}</td>
+                        <td>Color</td>
+                    </tr>
+                    <tr>
+                        <td>Control Implemented</td>
+                        <td>{{assessmentAnswer.controlImplemented}}</td>
+                        <td>Color</td>
+                    </tr>
+                    <tr>
+                        <td>Control Automated</td>
+                        <td>{{assessmentAnswer.controlAutomated}}</td>
+                        <td>Color</td>
+                    </tr>
+                    <tr>
+                        <td>Control Reporting</td>
+                        <td>{{assessmentAnswer.controlReporting}}</td> b
+                        <td>Color</td>
+                    </tr>
+                </table>
+
+            </md-card-content>
+            <md-card-actions>
+                <button md-raised-button color="primary" (click)="editAssessment(assessment.id)">Edit</button>
+            </md-card-actions>
+
+        </md-card>
+
+    </div>
+</div>-->
+<div *ngIf="!assessment">
+    <h2>Loading ..... </h2>
+</div>
+
+<br>
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+<button md-raised-button color="primary" (click)="goBack()">Go Back</button>

@@ -1,0 +1,28 @@
+<h2>Create an Assessment</h2>
+
+
+<table style="width: 100%" cellspacing="0">
+    <tr>
+        <td>
+            <md-input-container style="width: 100%">
+                <input [(ngModel)]="name" md-input placeholder="Assessment name">
+            </md-input-container>
+        </td>
+    </tr>
+</table>
+
+<div *ngIf="createdAssessment">
+    <h2>A record was saved</h2>
+    <h3>Name</h3>
+    <h4>{{createdAssessment.name}}</h4>
+    <h3>Id</h3>
+    <h4>{{createdAssessment.id}}</h4>
+    <h3>Id</h3>
+    <h4>{{createdAssessment}}</h4>
+
+</div>
+
+<p class="error" *ngIf="errorMessage">{{errorMessage}}</p>
+
+<button md-raised-button color="primary" (click)="createAssessment()">Save</button>
+<button md-raised-button color="warn" (click)="goBack()">Cancel</button>

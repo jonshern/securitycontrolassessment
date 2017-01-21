@@ -1,0 +1,104 @@
+            .assessmentresult {
+                padding: 40px;
+            }
+            
+            .assessmentresult {
+                border-collapse: collapse;
+                border-spacing: 0;
+                border-color: #999;
+            }
+            
+            .assessmentresult td {
+                font-size: 14px;
+                padding: 10px 5px;
+                border-style: solid;
+                border-width: 0px;
+                overflow: hidden;
+                word-break: normal;
+                border-color: #999;
+                color: #444;
+                background-color: #F7FDFA;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+            }
+            
+            .assessmentresult th {
+                font-size: 14px;
+                font-weight: normal;
+                padding: 10px 5px;
+                border-style: solid;
+                border-width: 0px;
+                overflow: hidden;
+                word-break: normal;
+                border-color: #999;
+                color: #fff;
+                background-color: #26ADE4;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+            }
+            
+            .assessmentresult .tg-yw4l {
+                vertical-align: top
+            }
+            
+            .container {
+                display: flex;
+                padding: 20px;
+            }
+            
+            .container>div {
+                flex: 1;
+                padding: 20px;
+                /*grow*/
+            }
+            
+            .container div {
+                padding: 20px;
+            }
+            
+            .app-content {
+                min-width: 400px;
+            }
+            
+            .app-content md-card {
+                margin: 20px;
+            }
+            
+            .app-content {
+                padding: 40px;
+            }
+            
+            .app-content table {
+                border-collapse: collapse;
+                border-spacing: 0;
+                border-color: #999;
+            }
+            
+            .app-content td {
+                font-size: 14px;
+                padding: 10px 5px;
+                border-style: solid;
+                border-width: 0px;
+                overflow: hidden;
+                word-break: normal;
+                border-color: #999;
+                color: #444;
+                background-color: #F7FDFA;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+            }
+            
+            .app-content th {
+                font-size: 14px;
+                font-weight: normal;
+                padding: 10px 5px;
+                border-style: solid;
+                border-width: 0px;
+                overflow: hidden;
+                word-break: normal;
+                border-color: #999;
+                color: #fff;
+                background-color: #26ADE4;
+                border-top-width: 1px;
+                border-bottom-width: 1px;
+            }

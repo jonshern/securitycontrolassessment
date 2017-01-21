@@ -1,0 +1,56 @@
+<div class="app-content">
+    <h2>Assessment Listing</h2>
+    <md-card *ngFor="let assessment of assessmentList | async" (click)="onSelect(assessment)">
+        <md-card-title-group>
+            <md-card-title>{{assessment.name}}</md-card-title>
+            <md-card-subtitle>
+                <h5>Overall Score</h5>
+                <h5>{{assessment.overallMaturityScore}}</h5>
+            </md-card-subtitle>
+            <img md-card-sm-image src="./assets/risk-mitigation-icon_279725.png">
+        </md-card-title-group>
+        <md-card-content>
+            <table>
+                <tr>
+                    <th>Maturity Level</th>
+                    <th>Description</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>Level One</td>
+                    <td>Policies Complete</td>
+                    <td>{{assessment.levelOneScore}}</td>
+                </tr>
+                <tr>
+                    <td>Level Two</td>
+                    <td>Controls 1-5 Implemented</td>
+                    <td>{{assessment.levelTwoScore}}</td>
+                </tr>
+                <tr>
+                    <td>Level Three</td>
+                    <td>All Controls Implemented</td>
+                    <td>{{assessment.levelThreeScore}}</td>
+                </tr>
+                <tr>
+                    <td>Level Four</td>
+                    <td>All Controls Automated</td>
+                    <td>{{assessment.levelFourScore}}</td>
+                </tr>
+                <tr>
+                    <td>Level Five</td>
+                    <td>All Controls Reported</td>
+                    <td>{{assessment.levelFiveScore}}</td>
+                </tr>
+            </table>
+        </md-card-content>
+        <md-card-actions>
+            <button md-raised-button color="primary" (click)="openAssessment(assessment.id)">Open</button>
+            <button md-raised-button color="warn">Delete</button>
+        </md-card-actions>
+    </md-card>
+    <div class="error" *ngIf="errorMessage">{{errorMessage}}</div>
+</div>
+<button md-raised-button color="primary" (click)="getAssessments()">Load Data</button>
+<span class="app-action">
+  <button md-fab (click)="newAssessment()" ><md-icon>add</md-icon></button>
+</span>

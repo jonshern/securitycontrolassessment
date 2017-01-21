@@ -1,0 +1,46 @@
+<h2>Assessment Result Editor</h2>
+
+<div *ngIf="asessmentAnswer">
+    <div class="app-content">
+        <md-card>
+            <md-card-title>Policy Defined</md-card-title>
+            <md-radio-group [(ngModel)]="asessmentAnswer.policyDefined">
+                <md-radio-button *ngFor="let o of policyChoices" [value]="o">
+                    {{o}}
+                </md-radio-button>
+            </md-radio-group>
+        </md-card>
+
+        <md-card>
+            <md-card-title>Control Implemented</md-card-title>
+            <md-radio-group [(ngModel)]="asessmentAnswer.controlImplemented">
+                <md-radio-button *ngFor="let o of controlChoices" [value]="o">
+                    {{o}}
+                </md-radio-button>
+            </md-radio-group>
+        </md-card>
+
+        <md-card>
+            <md-card-title>Control Automated</md-card-title>
+            <md-radio-group [(ngModel)]="asessmentAnswer.controlAutomated">
+                <md-radio-button *ngFor="let o of automationChoices" [value]="o">
+                    {{o}}
+                </md-radio-button>
+            </md-radio-group>
+        </md-card>
+
+
+        <md-card>
+            <md-card-title>Control Reporting</md-card-title>
+            <md-radio-group [(ngModel)]="asessmentAnswer.controlReporting">
+                <md-radio-button *ngFor="let o of reportingChoices" [value]="o">
+                    {{o}}
+                </md-radio-button>
+            </md-radio-group>
+        </md-card>
+        <button md-raised-button color="primary" (click)="saveAssessmentAnswer()">Save</button>
+        <button md-raised-button color="warn" (click)=onCancel()>Cancel</button>
+
+
+    </div>
+</div>
