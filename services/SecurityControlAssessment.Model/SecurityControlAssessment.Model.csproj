@@ -8,13 +8,12 @@
     <EmbeddedResource Include="**\*.resx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Remove="SampleData\**" />
+    <EmbeddedResource Remove="SampleData\**" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Documents\AssessmentMockups.pptx" />
     <None Include="Documents\AssessmentModel.vsdx" />
-    <None Include="SampleData\AuditScripts-Critical-Security-Control-Manual-Assessment-Tool-v6.1a %281%29.xlsx" />
-    <None Include="SampleData\AWS-Baseline-CIS.xlsx" />
-    <None Include="SampleData\CIS Assessment CNET V8.xlsx" />
-    <None Include="SampleData\CombinedSheetAssessment.xlsx" />
-    <None Include="SampleData\ToolScoring.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Mvvmlight.Snippet">

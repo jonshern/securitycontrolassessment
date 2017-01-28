@@ -6,7 +6,6 @@ import { AssessmentDetailComponent } from './assessment/assessment-detail.compon
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AssessmentCreateComponent } from './assessment/assessment-create.component';
 import { ASSESSMENTDETAIL_ROUTES } from './assessment/assessment-detail.routes';
-import { AssessmentDetailEditorComponent } from './assessment/assessment-detail-editor.component';
 
 import { ResultEditorComponent } from './result/result-editor.component';
 import { ResultDetailComponent } from './result/result-detail.component';

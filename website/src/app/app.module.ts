@@ -12,15 +12,19 @@ import { AppComponent } from './app.component';
 
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AssessmentService } from './service/assessment.service';
+
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
-import { AssessmentDetailEditorComponent } from './assessment/assessment-detail-editor.component';
 import { AssessmentCreateComponent } from './assessment/assessment-create.component';
 import { AssessmentListComponent } from './assessment/assessment-list.component';
 import { AssessmentDetailComponent } from './assessment/assessment-detail.component';
 import { ResultDetailComponent } from './result/result-detail.component';
 import { ResultEditorComponent } from './result/result-editor.component';
+
+
+import { AssessmentService } from './service/assessment.service';
+import { AssessmentAnswerService } from './service/assessmentanswer.service'
+
 
 
 @NgModule({
@@ -30,7 +34,6 @@ import { ResultEditorComponent } from './result/result-editor.component';
     AssessmentListComponent,
     DashboardComponent,
     HeaderComponent,
-    AssessmentDetailEditorComponent,
     AssessmentCreateComponent,
     ResultDetailComponent,
     ResultEditorComponent

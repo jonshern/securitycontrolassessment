@@ -36,10 +36,12 @@ namespace SecurityControlAssessment.Data
         {
             //optionsBuilder.UseInMemoryDatabase();
             //base.OnConfiguring(optionsBuilder);
-
+            // var connection = @"Server = eussqlassessment.database.windows.net; Initial Catalog = Assessment; Persist Security Info = False; User ID =jonshern; Password = Mooncheese%5; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30; ";
 
             //optionsBuilder.UseInternalServiceProvider
-            var connection = @"Server=tcp:[server],1433;Initial Catalog=Assessment;Persist Security Info=False;User ID=[username];Password=[password];MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+            var connection = @"Server=tcp:eussqlassessment.database.windows.net;Database=Assessment;Persist Security Info=False;User ID=jonshern;Password=Mooncheese%5;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+            // var connection = @"Server=tcp:eussqlassessment.database.windows.net,1433;Initial Catalog=Assessment;Persist Security Info=False;User ID=jonshern;Password=Mooncheese%5;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             optionsBuilder.UseSqlServer(connection, b => b.MigrationsAssembly("SecurityControlAssessment.WebServices"));
 
         }

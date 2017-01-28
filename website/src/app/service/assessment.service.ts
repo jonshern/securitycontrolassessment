@@ -5,9 +5,6 @@ import { AssessmentReport } from '../domain/assessmentreport';
 import { AssessmentAnswer } from '../domain/assessmentanswer';
 import { TemplateQuestion } from '../domain/templatequestion';
 
-// import { ASSESSMENTS } from '../mock/mock-assessments';
-// import { ASSESSMENTITEMS } from '../mock/mock-assessments';
-
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/toPromise';
 
@@ -16,32 +13,21 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class AssessmentService {
 
+    private assessmentList: AssessmentReport[] = [];
+
     private headers = new Headers({ 'Content-Type': 'application/json' });
-    // private baseUrl = 'http://securityassessmentservices.azurewebsites.net/';
+
+
     // private baseUrl = 'http://localhost:28070/';
-
-    // private assessmentUrl = 'api/AssessmentReport';
-
-    private assessmentUrl = 'http://localhost:28070/api/AssessmentReport';
-    private assessmentAnswerUrl = 'http://localhost:28070/api/AssessmentAnswer';
-    private templateQuestionUrl = 'http://localhost:28070/api/TemplateQuestion';
-    private createReportSnapshotUrl = 'http://localhost:28070/api/AssessmentReport/CreateReportSnapshot';
+    private baseUrl = 'http://securityassessmentservices.azurewebsites.net/';
 
 
-
-    // private assessmentUrl = 'http://securityassessmentservices.azurewebsites.net/api/AssessmentReport';
-    // private assessmentAnswerUrl = 'http://securityassessmentservices.azurewebsites.net/api/AssessmentAnswer';
-    // private templateQuestionUrl = 'http://securityassessmentservices.azurewebsites.net/api/TemplateQuestion';
-
-
+    private assessmentUrl = this.baseUrl + 'api/AssessmentReport';
+    private assessmentAnswerUrl = this.baseUrl + 'api/AssessmentAnswer';
+    private templateQuestionUrl = this.baseUrl + 'api/TemplateQuestion';
+    private createReportSnapshotUrl = this.baseUrl + 'api/AssessmentReport/CreateReportSnapshot';
 
     constructor(private http: Http) { }
-
-    // getAssessmentList(): Promise<AssessmentReport[]> {
-    //     return Promise.resolve(ASSESSMENTS);
-    // }
-
-
 
     deleteAssessment(id: string) {
         const url = `${this.assessmentUrl}/${id}`;
@@ -49,7 +35,6 @@ export class AssessmentService {
         return this.http.delete(this.assessmentUrl)
             .map(this.extractData)
             .catch(this.handleError);
-
     }
 
 
@@ -58,8 +43,6 @@ export class AssessmentService {
         return this.http.get(url)
             .map((response: Response) => response.json());
     }
-
-
 
     getAssessmentAnswer(id: string) {
         const url = `${this.assessmentAnswerUrl}/${id}`;
@@ -81,10 +64,6 @@ export class AssessmentService {
         return this.http.put(url, answer , options)
             .map(this.extractData)
             .catch(this.handleError);
-
-        // return this.http.post(this.assessmentAnswerUrl, { answer }, options)
-        //     .map(this.extractData)
-        //     .catch(this.handleError);
     }
 
     saveReportSnapshot(id: string, comments: string) {
@@ -100,10 +79,6 @@ export class AssessmentService {
         return this.http.post(url, comments, options)
             .map(this.extractData)
             .catch(this.handleError);
-
-        // return this.http.post(this.assessmentAnswerUrl, { answer }, options)
-        //     .map(this.extractData)
-        //     .catch(this.handleError);
     }
 
 

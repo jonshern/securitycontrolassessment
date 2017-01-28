@@ -66,7 +66,7 @@ namespace SecurityControlAssessment.WebServices
             });
 
 
-            var connection = @"Server = [ServerName]; Initial Catalog = Assessment; Persist Security Info = False; User ID = [UserName]; Password = [Password]; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30; ";
+            var connection = @"Server=tcp:eussqlassessment.database.windows.net;Database=Assessment;Persist Security Info=False;User ID=jonshern;Password=Mooncheese%5;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
             services.AddDbContext<AssessmentContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("SecurityControlAssessment.Data")));
 
 
