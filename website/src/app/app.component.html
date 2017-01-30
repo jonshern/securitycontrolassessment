@@ -1,39 +1,41 @@
-<md-sidenav-layout>
-
+<!--<md-sidenav-layout>
     <md-sidenav #sidenav mode="side" class="app-sidenav">
         <md-nav-list>
-            <!--<md-list-item>
-            <li><a routerLink="/dashboard">Dashboard</a></li>
-            <li><a routerLink="/assessments">Assessments</a></li>
-        </ul>-->
-
             <md-list-item>
                 <a md-line routerLink="/dashboard">Dashboard</a>
             </md-list-item>
-
             <md-list-item>
                 <a md-line routerLink="/assessments">Assessments</a>
             </md-list-item>
-
         </md-nav-list>
-
-
     </md-sidenav>
-
     <md-toolbar color="primary">
         <button class="app-icon-button" (click)="sidenav.toggle()">
       <i class="material-icons app-toolbar-menu">menu</i>
     </button>
-
         <app-header></app-header>
-
-
     </md-toolbar>
-    <div class="app-content">
 
+
+    <div class="app-content">
         <div>
             <router-outlet></router-outlet>
         </div>
     </div>
 
-</md-sidenav-layout>
+</md-sidenav-layout>-->
+
+<md-toolbar color="primary">
+    <app-header></app-header>
+    <md-toolbar-row color="accent">
+        <span><a md-line routerLink="/assessments">Assessments</a></span>
+    </md-toolbar-row>
+
+</md-toolbar>
+
+
+<div class="app-content">
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+</div>
