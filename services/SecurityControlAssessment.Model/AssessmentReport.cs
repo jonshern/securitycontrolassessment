@@ -7,6 +7,14 @@ namespace SecurityControlAssessment.Model
     public class AssessmentReport
     {
 
+        public enum ReportStatus
+        {
+            None = 0,
+            Active = 1,
+            Snapshot = 2,
+            Deleted = 3
+        }
+
        
 
         public AssessmentReport(string assessmentName, string typeName, string tags)
@@ -28,13 +36,7 @@ namespace SecurityControlAssessment.Model
             this.CreateTimeStamp = DateTime.Now;
 
             this.ReportType = "Active";
-
-
-      
-
             this.AssessmentAnswers = null;
-
-
         }
 
         public AssessmentReport(AssessmentReport report, string reportType)
@@ -56,6 +58,8 @@ namespace SecurityControlAssessment.Model
             this.CreateTimeStamp = DateTime.Now;
 
             this.ReportType = reportType;
+
+            this.Status = ReportStatus.Active;
 
             List<AssessmentAnswer> answers = new List<AssessmentAnswer>();
 
@@ -107,6 +111,8 @@ namespace SecurityControlAssessment.Model
         public DateTime CreateTimeStamp { get; set; }
 
         public string ReportType { get; set; }
+
+        public ReportStatus Status { get; set; }
 
 
 

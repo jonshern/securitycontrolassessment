@@ -61,18 +61,6 @@
     </md-card>
 </div>
 
-
-<!--<div *ngIf="templateQuestions">
-        <md-card *ngFor="let question of templateQuestions">
-
-            <md-card-content>
-                <p>Question:</p>
-                <p>{{question.detail}}</p>
-
-            </md-card-content>
-        </md-card>
-    </div>-->
-
 <div *ngIf="assessment">
     <div *ngIf="assessment.assessmentAnswers">
         <md-card>
@@ -107,52 +95,6 @@
     </div>
 </div>
 
-
-
-
-
-<!--
-<div *ngIf="assessment">
-    <div *ngIf="assessment.assessmentAnswers">
-        <md-card *ngFor="let assessmentAnswer of assessment.assessmentAnswers">
-            <md-card-content>
-                <table>
-                    <tr>
-                        <th>Control</th>
-                        <th>Status</th>
-                        <th>Color</th>
-                    </tr>
-                    <tr>
-                        <td>Policy Defined</td>
-                        <td>{{assessmentAnswer.policyDefined}}</td>
-                        <td>Color</td>
-                    </tr>
-                    <tr>
-                        <td>Control Implemented</td>
-                        <td>{{assessmentAnswer.controlImplemented}}</td>
-                        <td>Color</td>
-                    </tr>
-                    <tr>
-                        <td>Control Automated</td>
-                        <td>{{assessmentAnswer.controlAutomated}}</td>
-                        <td>Color</td>
-                    </tr>
-                    <tr>
-                        <td>Control Reporting</td>
-                        <td>{{assessmentAnswer.controlReporting}}</td> b
-                        <td>Color</td>
-                    </tr>
-                </table>
-
-            </md-card-content>
-            <md-card-actions>
-                <button md-raised-button color="primary" (click)="editAssessment(assessment.id)">Edit</button>
-            </md-card-actions>
-
-        </md-card>
-
-    </div>
-</div>-->
 <div *ngIf="!assessment">
     <h2>Loading ..... </h2>
 </div>

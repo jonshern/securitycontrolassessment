@@ -16,4 +16,7 @@ export class AssessmentReport {
     'levelThreeScore': number;
     'levelFourScore': number;
     'levelFiveScore': number;
+    'reportType': string;
+    'status': string;
+
 }

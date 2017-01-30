@@ -96,6 +96,9 @@ namespace SecurityControlAssessment.WebServices.Controllers
 
 
 
+
+
+
         [HttpPost]
         public AssessmentReport Post([FromBody]AssessmentReport report)
         {
@@ -109,9 +112,6 @@ namespace SecurityControlAssessment.WebServices.Controllers
             AssessmentFactory factory = new AssessmentFactory();
 
             AssessmentReport assessmentReport = factory.Create(report.Name, report.AssessmentType, report.Tags);
-
-
-
 
 
             EntityFrameworkRepository dataRepository = new EntityFrameworkRepository(_context);
@@ -128,57 +128,6 @@ namespace SecurityControlAssessment.WebServices.Controllers
 
 
 
-
-
-        //// POST api/values
-        //[HttpPut]
-        //public void Put([FromBody]AssessmentReport report)
-        //{
-
-        //    if (report == null)
-        //        throw new Exception("Invalid Request");
-
-
-        //    var reports = (from r in _context.AssessmentReports
-        //                   where r.Id == report.Id
-        //                   select r).FirstOrDefault();
-
-        //    if(reports == null)
-        //    {
-        //        //if the record is new create one.
-        //        IEnumerable<SecurityControlItem> securityControls = new List<SecurityControlItem>();
-        //        securityControls = SecurityControlDataLoader.LoadDefaultSecurityControls();
-
-        //        List<AssessmentItem> assessmentItems = new List<AssessmentItem>();
-
-        //        foreach (SecurityControlItem securityControl in securityControls)
-        //        {
-        //            assessmentItems.Add(new AssessmentItem(report.Id, securityControl));
-        //        }
-
-        //        report.AssessmentItems = assessmentItems;
-
-        //        _context.Add(report);
-        //        _context.SaveChanges();
-
-
-        //    }
-        //    else
-        //    {
-
-
-        //    }
-
-
-
-
-        //}
-
-        //// PUT api/values/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
 
         // DELETE api/values/5
         [HttpDelete("{id}")]

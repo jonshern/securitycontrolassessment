@@ -9,9 +9,10 @@ using SecurityControlAssessment.Model;
 namespace SecurityControlAssessment.WebServices.Migrations
 {
     [DbContext(typeof(AssessmentContext))]
-    partial class AssessmentContextModelSnapshot : ModelSnapshot
+    [Migration("20170129171936_IsDeletedStatus")]
+    partial class IsDeletedStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")

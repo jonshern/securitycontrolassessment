@@ -4,14 +4,14 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using SecurityControlAssessment.Data;
-using SecurityControlAssessment.Model;
 
 namespace SecurityControlAssessment.WebServices.Migrations
 {
     [DbContext(typeof(AssessmentContext))]
-    partial class AssessmentContextModelSnapshot : ModelSnapshot
+    [Migration("20170129171528_IsDeleted")]
+    partial class IsDeleted
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.1.0-rtm-22752")
@@ -72,6 +72,8 @@ namespace SecurityControlAssessment.WebServices.Migrations
 
                     b.Property<DateTime>("CreateTimeStamp");
 
+                    b.Property<bool>("IsDeleted");
+
                     b.Property<DateTime>("LastSnapshotDate");
 
                     b.Property<decimal>("LevelFiveScore");
@@ -89,8 +91,6 @@ namespace SecurityControlAssessment.WebServices.Migrations
                     b.Property<decimal>("OverallMaturityScore");
 
                     b.Property<string>("ReportType");
-
-                    b.Property<int>("Status");
 
                     b.Property<string>("Tags");
 

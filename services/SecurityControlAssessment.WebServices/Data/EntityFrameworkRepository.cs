@@ -58,7 +58,7 @@ namespace SecurityControlAssessment.WebServices.Data
 
             //Do a Deep Copy to save the report as a snapshot status.
             AssessmentReport reportSnapshot = new AssessmentReport(report, "Snapshot");
-
+    
 
 
 
