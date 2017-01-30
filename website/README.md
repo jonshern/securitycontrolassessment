@@ -4,17 +4,13 @@
 * Angular 2
 * Angular Material
     * [Angular Material Github](https://github.com/angular/material2)
-    
-
-
-
 * Used Angular-CLI to generate project and components
 
 
 ## Upcoming features
 * Graphing of scores using Chart.js - https://github.com/valor-software/ng2-charts
 
-
+# Angular Canned Documentation 
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
 
